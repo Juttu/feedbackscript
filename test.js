@@ -1,3 +1,14 @@
-const num = 400;
-console.log(`\u001b[1;31mSomething went wrong with error code ${num}\u001b[0m`);
-console.log("\u001b[1;32mFeedback already submitted");
+function printCount(count) {
+  console.log(
+    "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588"
+  );
+  console.log(count);
+  console.log(
+    "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588"
+  );
+}
+const index = 100;
+const list = 234;
+const result = index.toString() + "/" + list.toString();
+
+printCount(result);
