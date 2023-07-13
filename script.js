@@ -1,7 +1,7 @@
 const axios = require("axios");
 const fs = require("fs");
 
-var index = 66;
+var index = 0;
 
 const locationList = [
   "VINAYAK CHOWCK",
@@ -57,18 +57,8 @@ const locationList = [
   "tilars colony",
 ];
 
-const numbers3 = [
-  9705714853, 8309401091, 8374026985, 9959873663, 9160027442, 9676590868, 8555910690, 9440372711, 6281714941,
-  9177666983, 9666003749, 9542546278, 9640452816, 7661006836, 7893897161, 9014960352, 9494321435, 8897776196,
-  8096803714, 9154799302, 8688347761, 8897331263, 9440704880, 9441865930, 7989694042, 9490916975, 9059811686,
-  9110593269, 9963107520, 6305579772, 9133879387, 9177749615, 8008516143, 6300655614, 6281514901, 9959346177,
-  9666098422, 7780539481, 7893399376, 9848020141, 8074917417, 6302738540, 8500026044, 9182074093, 9666588173,
-  7660907270, 9010980366, 7282992965, 7729807059, 9440308220, 7286959413, 9391586147, 9346134692, 9494577297,
-  9502346628, 9100571046, 9618538854, 9705824301, 9948800271, 8143879885, 8978899896, 9154411373, 6301253324,
-  6304895210, 9494690347, 7702553963, 9866941863, 9290091993, 8125707281, 9490619522, 9963728403, 9912835715,
-  9182461830, 9849860984, 9110555124, 9640131457, 6303167489, 9701194094, 9505351205, 8639644498, 9494310271,
-  9247438404, 9704547673,
-];
+//Mobile numbers List
+const numbers3 = [6281670299, 9640332342, 9666337902, 9704049168, 7989888985, 9550347265];
 
 const phoneNumbers = numbers3.map((number) => number.toString());
 const genderList = ["M", "F"];
@@ -118,7 +108,7 @@ function sendRequest(res_phone, location_name, res_age, res_gender) {
 
   return axios(requestOptionsSendOTP)
     .then((response) => {
-      console.log("GET request sent successfully:", response.data);
+      console.log("OTP Sent:", response.data);
 
       return new Promise((resolve) => {
         setTimeout(() => {
@@ -169,7 +159,7 @@ function sendRequest(res_phone, location_name, res_age, res_gender) {
 
           axios(requestOptions)
             .then((response) => {
-              console.log("POST request sent successfully:", response.data);
+              console.log("Successful:", response.data);
               resolve();
             })
             .catch((error) => {
