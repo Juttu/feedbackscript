@@ -66,17 +66,18 @@ const genderList = ["M", "F"];
 function getCurrentTime() {
   var currentDate = new Date();
 
-  var year = currentDate.getFullYear();
-  var month = String(currentDate.getMonth() + 1).padStart(2, "0");
-  var day = String(currentDate.getDate()).padStart(2, "0");
-  var hours = String(currentDate.getHours()).padStart(2, "0");
-  var minutes = String(currentDate.getMinutes()).padStart(2, "0");
-  var seconds = String(currentDate.getSeconds()).padStart(2, "0");
+  var options = { timeZone: "Asia/Kolkata", hour12: false };
+  var dateTimeString = currentDate.toLocaleString("en-US", options);
 
-  var dateTimeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  var [datePart, timePart] = dateTimeString.split(", ");
+  var [month, day, year] = datePart.split("/");
+  month = month.padStart(2, "0");
+  day = day.padStart(2, "0");
+  var [hours, minutes, seconds] = timePart.split(":");
+  var formattedTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
-  console.log(dateTimeString);
-  return dateTimeString;
+  console.log(formattedTime);
+  return formattedTime;
 }
 
 function printCount(count) {
